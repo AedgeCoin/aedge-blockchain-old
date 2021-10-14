@@ -32,10 +32,10 @@ testnet_kwargs = {
     # Forks of aedge should change this value to provide replay attack protection. This is set to mainnet genesis chall
     "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("aa0473610c9285f0560a14c3c578af6dfe8acf51f7dc4d63d1e0ff4e7da8e673"),
     "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex(
-        "e3d86e5617d4efe857038a19aecdb60e874fc611d010d85041d666ee37192ecc"
+        "9cc9b52ca98041d572d6ba65fd6426f853e5cbdd2e9da765db4c2676b55907fe"
     ),
     "GENESIS_PRE_FARM_FARMER_PUZZLE_HASH": bytes.fromhex(
-        "e3d86e5617d4efe857038a19aecdb60e874fc611d010d85041d666ee37192ecc"
+        "9cc9b52ca98041d572d6ba65fd6426f853e5cbdd2e9da765db4c2676b55907fe"
     ),
     "MAX_VDF_WITNESS_SIZE": 64,
     # Size of mempool = 50x the size of block
