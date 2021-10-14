@@ -29,7 +29,7 @@ def print_conditions(spend_bundle: SpendBundle):
 
 
 async def main() -> None:
-    rpc_port: uint16 = uint16(8855)
+    rpc_port: uint16 = uint16(9067)
     self_hostname = "localhost"
     path = DEFAULT_ROOT_PATH
     config = load_config(path, "config.yaml")

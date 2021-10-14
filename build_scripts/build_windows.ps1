@@ -99,7 +99,7 @@ If ($LastExitCode -gt 0){
 Write-Output "   ---"
 Write-Output "Increase the stack for aedge command for (aedge plots create) chiapos limitations"
 # editbin.exe needs to be in the path
-editbin.exe /STACK:8300000 daemon\aedge.exe
+editbin.exe /STACK:8000000 daemon\aedge.exe
 Write-Output "   ---"
 
 $packageVersion = "$env:AEDGE_INSTALLER_VERSION"

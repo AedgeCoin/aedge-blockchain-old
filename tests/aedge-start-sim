@@ -34,9 +34,9 @@ echo "Note that this simulation will not work if connected to external nodes."
  _run_bg_cmd aedge_timelord --logging.log_stdout=True --logging.log_level=INFO
  _run_bg_cmd aedge_timelord_launcher --logging.log_stdout=True --logging.log_level=INFO
 _run_bg_cmd aedge_introducer --logging.log_stdout=True --logging.log_level=INFO
-_run_bg_cmd aedge_full_node --port=8744 --database_path="simulation_1.db" --rpc_port=8855 --introducer_peer.host="127.0.0.1" --introducer_peer.port=8745 --logging.log_stdout=True --logging.log_level=INFO --logging.log_level=INFO
+_run_bg_cmd aedge_full_node --port=8956 --database_path="simulation_1.db" --rpc_port=9067 --introducer_peer.host="127.0.0.1" --introducer_peer.port=8957 --logging.log_stdout=True --logging.log_level=INFO --logging.log_level=INFO
 sleep 1
-_run_bg_cmd aedge_full_node --port=8302 --database_path="simulation_2.db" --rpc_port=8556 --introducer_peer.host="127.0.0.1" --introducer_peer.port=8745 --logging.log_stdout=True --logging.log_level=INFO
+_run_bg_cmd aedge_full_node --port=8514 --database_path="simulation_2.db" --rpc_port=8556 --introducer_peer.host="127.0.0.1" --introducer_peer.port=8957 --logging.log_stdout=True --logging.log_level=INFO
  _run_bg_cmd python -m aedge.daemon.server --logging.log_stdout=True --logging.log_level=INFO
 
 wait

@@ -92,7 +92,7 @@ def configure(
     if testnet is not None:
         if testnet == "true" or testnet == "t":
             print("Setting Testnet")
-            testnet_port = "58744"
+            testnet_port = "58956"
             testnet_introducer = "beta1_introducer.aedgecoin.com"
             testnet_dns_introducer = "dns-introducer-testnet.aedgecoin.com"
             testnet = "testnet"
@@ -119,7 +119,7 @@ def configure(
 
         elif testnet == "false" or testnet == "f":
             print("Setting Mainnet")
-            mainnet_port = "8744"
+            mainnet_port = "8956"
             mainnet_introducer = "introducer.aedgecoin.com"
             mainnet_dns_introducer = "dns-introducer.aedgecoin.com"
             net = "mainnet"

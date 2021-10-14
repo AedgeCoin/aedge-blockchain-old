@@ -27,8 +27,8 @@ MAX_TOTAL_PEERS_RECEIVED = 3000
 MAX_CONCURRENT_OUTBOUND_CONNECTIONS = 70
 # /aedge/server/node_discovery.py _AedgeFork
 NETWORK_ID_DEFAULT_PORTS = {
-    "mainnet": 8744,
-    "testnet": 58744,
+    "mainnet": 8956,
+    "testnet": 58956,
 }
 
 

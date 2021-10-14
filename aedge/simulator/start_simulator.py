@@ -61,7 +61,7 @@ def main() -> None:
         config["database_path"] = config["simulator_database_path"]
         config["peer_db_path"] = config["simulator_peer_db_path"]
         config["introducer_peer"]["host"] = "127.0.0.1"
-        config["introducer_peer"]["port"] = 58855
+        config["introducer_peer"]["port"] = 59067
         config["selected_network"] = "testnet"
         config["simulation"] = True
         kwargs = service_kwargs_for_full_node_simulator(
