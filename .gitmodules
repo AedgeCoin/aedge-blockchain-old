@@ -1,0 +1,8 @@
+[submodule "aedge-blockchain-gui"]
+	path = aedge-blockchain-gui
+	url = https://github.com/aedgecoin/aedge-blockchain-gui
+	branch = pools
+[submodule "mozilla-ca"]
+	path = mozilla-ca
+	url = https://github.com/aedgecoin/mozilla-ca
+        branch = main
