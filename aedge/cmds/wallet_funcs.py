@@ -154,6 +154,7 @@ async def print_balances(args: dict, wallet_client: WalletRpcClient, fingerprint
         print(f"   -Spendable: {print_balance(balances['spendable_balance'], scale, address_prefix)}")
 
 
+# /aedge/cmds/wallet_funcs.py get_wallet() _AedgeFork remove online backup (log_in_and_skip only)
 async def get_wallet(wallet_client: WalletRpcClient, fingerprint: int = None) -> Optional[Tuple[WalletRpcClient, int]]:
     if fingerprint is not None:
         fingerprints = [fingerprint]
@@ -165,7 +166,7 @@ async def get_wallet(wallet_client: WalletRpcClient, fingerprint: int = None) ->
     if len(fingerprints) == 1:
         fingerprint = fingerprints[0]
     if fingerprint is not None:
-        log_in_response = await wallet_client.log_in(fingerprint)
+        log_in_response = await wallet_client.log_in_and_skip(fingerprint)
     else:
         print("Choose wallet key:")
         for i, fp in enumerate(fingerprints):
@@ -186,37 +187,7 @@ async def get_wallet(wallet_client: WalletRpcClient, fingerprint: int = None) ->
                 else:
                     fingerprint = fingerprints[index]
         assert fingerprint is not None
-        log_in_response = await wallet_client.log_in(fingerprint)
-
-    if log_in_response["success"] is False:
-        if log_in_response["error"] == "not_initialized":
-            use_cloud = True
-            if "backup_path" in log_in_response:
-                path = log_in_response["backup_path"]
-                print(f"Backup file from backup.aedgecoin.com downloaded and written to: {path}")
-                val = input("Do you want to use this file to restore from backup? (Y/N) ")
-                if val.lower() == "y":
-                    log_in_response = await wallet_client.log_in_and_restore(fingerprint, path)
-                else:
-                    use_cloud = False
-
-            if "backup_path" not in log_in_response or use_cloud is False:
-                if use_cloud is True:
-                    val = input(
-                        "No online backup file found,\n Press S to skip restore from backup"
-                        "\n Press F to use your own backup file: "
-                    )
-                else:
-                    val = input(
-                        "Cloud backup declined,\n Press S to skip restore from backup"
-                        "\n Press F to use your own backup file: "
-                    )
-
-                if val.lower() == "s":
-                    log_in_response = await wallet_client.log_in_and_skip(fingerprint)
-                elif val.lower() == "f":
-                    val = input("Please provide the full path to your backup file: ")
-                    log_in_response = await wallet_client.log_in_and_restore(fingerprint, val)
+        log_in_response = await wallet_client.log_in_and_skip(fingerprint)
 
     if "success" not in log_in_response or log_in_response["success"] is False:
         if "error" in log_in_response:

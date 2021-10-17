@@ -211,7 +211,7 @@ class FullNode:
             dns_servers = self.config["dns_servers"]
         elif self.config["port"] == 8956:
             # If `dns_servers` misses from the `config`, hardcode it if we're running mainnet.
-            dns_servers.append("dns-introducer.aedgecoin.com")
+            dns_servers.append("dns-introducer.aedgenetwork.com")
         try:
             self.full_node_peers = FullNodePeers(
                 self.server,
