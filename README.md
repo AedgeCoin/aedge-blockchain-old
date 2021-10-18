@@ -1,4 +1,4 @@
-# AedgeCoin [aedgecoin.com](aedgecoin.com)
+# AedgeCoin [aedgecoin.com](https://aedgecoin.com)
 
 Aedge means algorithmic edge.
 
